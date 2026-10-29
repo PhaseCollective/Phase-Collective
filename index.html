@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHASE Collective</title>
+  <style>
+    :root {
+      --green: #3E5B4B;
+      --cream: #F6F2E9;
+      --blush: #D8A8A3;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--green);
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 480px;
+      margin: auto;
+      padding: 36px 22px;
+      text-align: center;
+    }
+    .logo {
+      font-size: 64px;
+      font-weight: 300;
+      margin: 10px 0 20px;
+    }
+    h1 { letter-spacing: 5px; margin-bottom: 5px; }
+    .subtitle { letter-spacing: 4px; font-size: 12px; }
+    .tagline { margin: 32px 0; }
+    .button {
+      display: block;
+      padding: 18px;
+      margin: 12px 0;
+      border: 1px solid var(--green);
+      border-radius: 10px;
+      color: var(--green);
+      text-decoration: none;
+      font-weight: bold;
+      background: transparent;
+      cursor: pointer;
+      width: 100%;
+      font-size: 15px;
+    }
+    .button.primary {
+      background: var(--green);
+      color: white;
+    }
+    .page { display: none; }
+    .page.active { display: block; }
+    footer {
+      margin-top: 45px;
+      font-size: 12px;
+      opacity: .7;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="logo">Λ</div>
+    <h1>PHASE</h1>
+    <div class="subtitle">COLLECTIVE</div>
+    <p class="tagline">Explore. Discover. Evolve.</p>
+
+    <section id="home" class="page active">
+      <button class="button primary"
+        onclick="showPage('products')">
+        Explore Collection
+      </button>
+      <button class="button"
+        onclick="showPage('research')">
+        Research & Information
+      </button>
+      <button class="button"
+        onclick="showPage('contact')">
+        Contact & Enquiries
+      </button>
+    </section>
+
+    <section id="products" class="page">
+      <h2>Our Collection</h2>
+      <p>Our product collection is being prepared.</p>
+      <p>Check back soon for updates.</p>
+      <button class="button"
+        onclick="showPage('home')">Back</button>
+    </section>
+
+    <section id="research" class="page">
+      <h2>Research & Information</h2>
+      <p>Discover evidence-led information
+      about peptide science and innovation.</p>
+      <p>Educational information only.</p>
+      <button class="button"
+        onclick="showPage('home')">Back</button>
+    </section>
+
+    <section id="contact" class="page">
+      <h2>Contact PHASE</h2>
+      <p>For general enquiries, contact us
+      through our Telegram bot.</p>
+      <a class="button primary"
+        href="https://t.me/PHASECollectivebot">
+        Open Telegram
+      </a>
+      <button class="button"
+        onclick="showPage('home')">Back</button>
+    </section>
+
+    <footer>PHASE COLLECTIVE © 2026</footer>
+  </main>
+
+  <script>
+    function showPage(id) {
+      document.querySelectorAll('.page')
+        .forEach(page => page.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
